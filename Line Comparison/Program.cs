@@ -30,6 +30,47 @@ namespace Line_Comparison
                 Console.ReadLine();
             }
         }
+        public static void UC3(int l1, int m1, int l2, int m2)
+        {
+            int le1, le2;
+            if (l1 == l2)
+            {
+                int comp = m1.CompareTo(m2);
+                if (comp == 0)
+                {
+                    Console.WriteLine("Both line are equals");
+                }
+                else if (comp >= 0)
+                {
+                    Console.WriteLine("Second line is Smaller than first");
+                }
+                else
+                {
+                    Console.WriteLine("Second line is bigger than First");
+                }
+            }
+            else
+            {
+                le1 = m1 - l1;
+                le2 = m2 - l2;
+                int comp = le1.CompareTo(le2);
+                if (comp == 0)
+                {
+                    Console.WriteLine("Both line are equals");
+                }
+                else if (comp >= 0)
+                {
+                    Console.WriteLine("Second line is Smaller than first");
+                }
+                else
+                {
+                    Console.WriteLine("Second line is bigger than First");
+                }
+                Console.ReadLine();
+            }
+
+        }
+
 
         static void Main(string[] args)
         {
@@ -50,6 +91,15 @@ namespace Line_Comparison
             int a2 = Convert.ToInt32(Console.ReadLine());
             int b2 = Convert.ToInt32(Console.ReadLine());
             Program.UC2(a1, b1, a2, b2);
+
+            Console.WriteLine("To Compare Both Line by CompareTo method");
+            Console.WriteLine("Please Enter the first line coordinates");
+            int l1 = Convert.ToInt32(Console.ReadLine());
+            int m1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter start and end points of Second line: ");
+            int l2 = Convert.ToInt32(Console.ReadLine());
+            int m2 = Convert.ToInt32(Console.ReadLine());
+            Program.UC3(l1, m1, l2, m2);
         }
     }
 }
